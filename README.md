@@ -1,13 +1,11 @@
 # membuat pesbuk
 
 install webserver
-
 ```
 sudo apt-get install -y apache2 && apt-get install -y php php-mysql
 ```
 
 install database ext
-
 ```
 sudo apt-get install -y mysql-server
 ```
