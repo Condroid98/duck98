@@ -42,7 +42,7 @@ sudo rm -rf /var/www/html
 
 pindahkan file yang sudah di ekstrak
 ```
-sudo mv sosial-media-master/*  /var/www/html
+sudo mv duck98-main/*  /var/www/html
 ````
 
 masuk folder kemudian lakukan dump
