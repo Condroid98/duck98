@@ -13,7 +13,7 @@ sudo apt-get install -y mysql-server
 ambil file master.zip
 ```
 sudo apt-get install wget -y
-wget  https://github.com/Condroid98/duck98/master.zip
+wget https://github.com/Condroid98/duck98/blob/main/master.zip
 ```
 
 ekstrak File
@@ -55,4 +55,5 @@ restart webserver apache2
 ```
 sudo systemctl restart apache2
 ```
-akses localhost atau IP public
+
+##akses localhost(127.0.0.1) atau IP public
