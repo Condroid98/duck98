@@ -56,4 +56,4 @@ restart webserver apache2
 sudo systemctl restart apache2
 ```
 
-##akses localhost(127.0.0.1) atau IP public
+akses localhost(127.0.0.1) atau IP public
