@@ -13,13 +13,13 @@ sudo apt-get install -y mysql-server
 ambil file master.zip
 ```
 sudo apt-get install wget -y
-wget https://github.com/Condroid98/duck98/blob/main/master.zip
+wget https://github.com/Condroid98/duck98/archive/duck98-main.zip
 ```
 
 ekstrak File
 ```
 sudo apt-get unzip -y
-unzip master.zip
+unzip duck98-main.zip
 ```
 
 buat user
