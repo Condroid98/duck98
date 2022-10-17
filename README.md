@@ -31,7 +31,7 @@ grant all privileges on *.* to 'devopscilsy'@'localhost';
 
 Buat database di user yang sudah di buat
 ```
-mysql -u devopscilsy -p1234567890 <<hehe
+mysql -u devopscilsy -p1234567890
 create database dbsosmed;
 ```
 
