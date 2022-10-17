@@ -26,7 +26,8 @@ Buat user
 ```
 sudo mysql -u root
 create user 'devops'@'localhost' identified by 'qwerty123';
-grant all privileges on *.* to 'devopscilsy'@'localhost';
+grant all privileges on *.* to 'devops'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
 Buat database di user yang sudah di buat
