@@ -13,13 +13,13 @@ sudo apt-get install -y mysql-server
 Download alat tempur
 ```
 sudo apt-get install wget -y
-wget https://github.com/Condroid98/duck98/archive/duck98-main.zip
+wget https://github.com/Condroid98/duck98/archive/master.zip
 ```
 
 Ekstrak File
 ```
 sudo apt-get unzip -y
-unzip duck98-main.zip
+unzip master.zip
 ```
 
 Buat user
