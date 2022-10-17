@@ -25,13 +25,13 @@ unzip duck98-main.zip
 Buat user
 ```
 sudo mysql -u root
-create user 'devopscilsy'@'localhost' identified by '1234567890';
+create user 'devops'@'localhost' identified by 'qwerty123';
 grant all privileges on *.* to 'devopscilsy'@'localhost';
 ```
 
 Buat database di user yang sudah di buat
 ```
-mysql -u devopscilsy -p1234567890
+mysql -u devops -pqwerty123
 create database dbsosmed;
 ```
 
@@ -48,7 +48,7 @@ sudo mv duck98-main/*  /var/www/html
 Masuk folder kemudian lakukan dump
 ```
 cd /var/www/html
-mysql -u devopscilsy -p1234567890 dbsosmed < dump.sql
+mysql -u devops -pqwerty dbsosmed < dump.sql
 ```
 
 Restart webserver apache2
