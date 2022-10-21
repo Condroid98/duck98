@@ -13,7 +13,7 @@ sudo apt-get install -y mysql-server
 Download alat tempur
 ```
 sudo apt-get install wget -y
-wget https://github.com/Condroid98/duck98/archive/master.zip
+wget https://github.com/Condroid98/pesbuk/archive/master.zip
 ```
 
 Ekstrak File
@@ -43,7 +43,7 @@ sudo rm -rf /var/www/html
 
 Pindahkan file yang sudah di ekstrak
 ```
-sudo mv duck98-main/*  /var/www/html
+sudo mv pesbuk-main/*  /var/www/html
 ````
 
 Masuk folder kemudian lakukan dump
