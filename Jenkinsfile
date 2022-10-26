@@ -1,0 +1,53 @@
+pipeline {  
+  agent any 
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))   
+  }
+  stages {
+    stage('Build Image') {
+        steps {
+            script {
+                if (env.BRANCH_NAME == 'staging') {
+            sh 'docker build -t  637631085186.dkr.ecr.ap-southeast-1.amazonaws.com/pesbuk:0.0.$BUILD_NUMBER-stg .'
+                }
+                else if (env.BRANCH_NAME == 'production') {
+            sh 'docker build -t  637631085186.dkr.ecr.ap-southeast-1.amazonaws.com/pesbuk:0.0.$BUILD_NUMBER-prod .'   
+               }
+                else {
+                    sh 'echo Nothing to Build'
+                }
+            }
+        }
+    }
+    stage('Push to Registry') {
+        steps {
+            script {
+                if (env.BRANCH_NAME == 'staging') {
+            sh 'docker push  637631085186.dkr.ecr.ap-southeast-1.amazonaws.com/pesbuk:0.0.$BUILD_NUMBER-stg' 
+                }
+                else if (env.BRANCH_NAME == 'production') {
+            sh 'docker push  637631085186.dkr.ecr.ap-southeast-1.amazonaws.com/pesbuk:0.0.$BUILD_NUMBER-prod'
+               }
+                else {
+                    sh 'echo Nothing to Build'
+                }
+
+        }
+      }
+    } 
+}
+        post {
+            success {
+                slackSend channel: '#jenkins',
+                color: 'good',
+                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
+            }    
+
+            failure {
+                slackSend channel: '#jenkins',
+                color: 'danger',
+                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
+                }
+
+        }
+}
