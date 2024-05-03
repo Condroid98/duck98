@@ -2,24 +2,22 @@
 
 Install webserver
 ```
-sudo apt-get install -y apache2 && apt-get install -y php php-mysql
+sudo apt-get install apache2 -y && sudo apt-get install php php-mysql -y
 ```
 
 Install database ext
 ```
-sudo apt-get install -y mysql-server
+sudo apt-get install mysql-server -y 
 ```
 
-Download alat tempur
+Alat tempur
 ```
-sudo apt-get install wget -y
-wget https://github.com/Condroid98/pesbuk/archive/master.zip
+sudo apt-get install wget -y && wget https://github.com/Condroid98/pesbuk/archive/master.zip
 ```
 
 Ekstrak File
 ```
-sudo apt-get unzip -y
-unzip master.zip
+sudo apt-get install unzip -y && unzip master.zip
 ```
 
 Buat user
@@ -38,7 +36,7 @@ create database dbsosmed;
 
 Hapus file di var/www/html
 ```
-sudo rm -rf /var/www/html
+sudo rm -rf /var/www/html/*
 ```
 
 Pindahkan file yang sudah di ekstrak
@@ -46,7 +44,7 @@ Pindahkan file yang sudah di ekstrak
 sudo mv pesbuk-main/*  /var/www/html
 ````
 
-Masuk folder kemudian lakukan dump
+Masuk ke dalam folder kemudian lakukan dump
 ```
 cd /var/www/html
 mysql -u devops -pqwerty dbsosmed < dump.sql
