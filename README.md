@@ -22,7 +22,7 @@ sudo apt-get install unzip -y && unzip master.zip
 
 Buat user
 ```
-sudo mysql -u root
+sudo mysql -u root 
 create user 'devops'@'localhost' identified by 'qwerty123';
 grant all privileges on *.* to 'devops'@'localhost';
 FLUSH PRIVILEGES;
@@ -34,6 +34,13 @@ mysql -u devops -pqwerty123
 create database dbsosmed;
 ```
 
+*khusus Database MYSQL yang digunakan untuk membuat bash script harus menyertakan tanda "<<" exmaple :
+```
+mysql -u data -porang <<EOFMSQL
+create database testdb;
+EOFMYSQL
+```
+
 Hapus file di var/www/html
 ```
 sudo rm -rf /var/www/html/*
@@ -41,13 +48,13 @@ sudo rm -rf /var/www/html/*
 
 Pindahkan file yang sudah di ekstrak
 ```
-sudo mv pesbuk-main/*  /var/www/html
+sudo mv pesbuk-production/*  /var/www/html
 ````
 
 Masuk ke dalam folder kemudian lakukan dump
 ```
 cd /var/www/html
-mysql -u devops -pqwerty dbsosmed < dump.sql
+mysql -u devops -pqwerty123 dbsosmed < dump.sql
 ```
 
 Restart webserver apache2
